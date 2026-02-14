@@ -71,7 +71,7 @@ rules:
 
 # 你的自定义规则（保留原有代理组指向，无缝衔接）
   - DOMAIN-SUFFIX,exitgames.com,Lucky Defense
-  - DOMAIN,configure-tcp-ios.mtgglobals.com,☑️ 手动切换
+  - DOMAIN,configure-tcp-ios.mtgglobals.com,🔰 节点选择
   - DOMAIN-SUFFIX,8am.cc.cd,DIRECT
 
 # 保留你的代理组配置（无缩进/语法错误）
@@ -79,4 +79,8 @@ proxy-groups:
   - name: Lucky Defense
     type: select
     proxies:
-      - ☑️ 手动切换
+      - 🔰 节点选择
+  - name: ♻️ 自动选择
+    type: select
+    include-all: true
+    proxies: null
