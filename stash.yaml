@@ -1,25 +1,82 @@
-
-# 规则集声明（加到 rule-providers 下）
-rule-providers:
-  cloudflare-domain:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cloudflare.txt"
-    path: ./ruleset/cloudflare-domain.yaml
-    interval: 86400
-  cloudflare-ip:
-    type: http
-    behavior: ipcidr
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cloudflareip.txt"
-    path: ./ruleset/cloudflare-ip.yaml
-    interval: 86400
-
-# 规则引用（加到 rules 最前面）
+# Cloudflare 域名+IP 直连规则（整合你的文件内容，Stash 原生语法）
 rules:
-  - RULE-SET,cloudflare-domain,DIRECT
-  - RULE-SET,cloudflare-ip,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,argotunnel.com,DIRECT
+  - DOMAIN-SUFFIX,cf-ipfs.com,DIRECT
+  - DOMAIN-SUFFIX,cf-ns.com,DIRECT
+  - DOMAIN-SUFFIX,cf-ns.net,DIRECT
+  - DOMAIN-SUFFIX,cf-ns.site,DIRECT
+  - DOMAIN-SUFFIX,cf-ns.tech,DIRECT
+  - DOMAIN-SUFFIX,cftest5.cn,DIRECT
+  - DOMAIN-SUFFIX,cftest6.cn,DIRECT
+  - DOMAIN-SUFFIX,cftest7.com,DIRECT
+  - DOMAIN-SUFFIX,cftest8.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-cn.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-dns.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-ech.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-gateway.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-ipfs.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-quic.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflare.net,DIRECT
+  - DOMAIN-SUFFIX,cloudflare.tv,DIRECT
+  - DOMAIN-SUFFIX,cloudflareaccess.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareapps.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarebolt.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareclient.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarecn.net,DIRECT
+  - DOMAIN-SUFFIX,cloudflareinsights-cn.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareinsights.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareok.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareportal.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarepreview.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareprod.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflareresolve.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflaressl.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarestaging.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarestatus.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarestorage.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarestoragegw.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarestream.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflaretest.com,DIRECT
+  - DOMAIN-SUFFIX,cloudflarewarp.com,DIRECT
+  - DOMAIN-SUFFIX,every1dns.net,DIRECT
+  - DOMAIN-SUFFIX,one.one.one,DIRECT
+  - DOMAIN-SUFFIX,pacloudflare.com,DIRECT
+  - DOMAIN-SUFFIX,pages.dev,DIRECT
+  - DOMAIN-SUFFIX,trycloudflare.com,DIRECT
+  - DOMAIN-SUFFIX,videodelivery.net,DIRECT
+  - DOMAIN-SUFFIX,warp.plus,DIRECT
+  - DOMAIN-SUFFIX,workers.dev,DIRECT
+  - IP-CIDR,103.21.244.0/22,DIRECT,no-resolve
+  - IP-CIDR,103.22.200.0/22,DIRECT,no-resolve
+  - IP-CIDR,103.31.4.0/22,DIRECT,no-resolve
+  - IP-CIDR,104.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,108.162.192.0/18,DIRECT,no-resolve
+  - IP-CIDR,131.0.72.0/22,DIRECT,no-resolve
+  - IP-CIDR,141.101.64.0/18,DIRECT,no-resolve
+  - IP-CIDR,162.158.0.0/15,DIRECT,no-resolve
+  - IP-CIDR,172.64.0.0/13,DIRECT,no-resolve
+  - IP-CIDR,173.245.48.0/20,DIRECT,no-resolve
+  - IP-CIDR,188.114.96.0/20,DIRECT,no-resolve
+  - IP-CIDR,190.93.240.0/20,DIRECT,no-resolve
+  - IP-CIDR,197.234.240.0/22,DIRECT,no-resolve
+  - IP-CIDR,198.41.128.0/17,DIRECT,no-resolve
+  - IP-CIDR6,2400:cb00::/32,DIRECT,no-resolve
+  - IP-CIDR6,2405:8100::/32,DIRECT,no-resolve
+  - IP-CIDR6,2405:b500::/32,DIRECT,no-resolve
+  - IP-CIDR6,2606:4700::/32,DIRECT,no-resolve
+  - IP-CIDR6,2803:f800::/32,DIRECT,no-resolve
+  - IP-CIDR6,2a06:98c0::/29,DIRECT,no-resolve
+  - IP-CIDR6,2c0f:f248::/32,DIRECT,no-resolve
 
-  # 下面放你原来的规则...
-  - DOMAIN-SUFFIX,exitgames.com,☑️ 手动切换
+# 你的自定义规则（保留原有代理组指向，无缝衔接）
+  - DOMAIN-SUFFIX,exitgames.com,Lucky Defense
   - DOMAIN,configure-tcp-ios.mtgglobals.com,☑️ 手动切换
   - DOMAIN-SUFFIX,8am.cc.cd,DIRECT
+
+# 保留你的代理组配置（无缩进/语法错误）
+proxy-groups:
+  - name: Lucky Defense
+    type: select
+    proxies:
+      - ☑️ 手动切换
