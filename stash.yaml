@@ -80,7 +80,4 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 节点选择
-  - name: ♻️ 自动选择
-    type: select
-    include-all: true
-    proxies: null
+
