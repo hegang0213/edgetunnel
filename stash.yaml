@@ -1,8 +1,8 @@
-proxy-groups：
+proxy-groups:
   - name: Lucky Defense
     type: select
-      proxies:
-        - ☑️ 手动切换
+    proxies:
+      - ☑️ 手动切换
 
 # 规则集声明（加到 rule-providers 下）
 rule-providers:
