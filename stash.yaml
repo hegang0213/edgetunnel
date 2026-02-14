@@ -1,8 +1,3 @@
-proxy-groups:
-  - name: Lucky Defense
-    type: select
-    proxies:
-      - ☑️ 手动切换
 
 # 规则集声明（加到 rule-providers 下）
 rule-providers:
@@ -25,6 +20,6 @@ rules:
   - RULE-SET,cloudflare-ip,DIRECT,no-resolve
 
   # 下面放你原来的规则...
-  - DOMAIN-SUFFIX,exitgames.com,Lucky Defense
+  - DOMAIN-SUFFIX,exitgames.com,☑️ 手动切换
   - DOMAIN,configure-tcp-ios.mtgglobals.com,☑️ 手动切换
   - DOMAIN-SUFFIX,8am.cc.cd,DIRECT
