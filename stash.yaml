@@ -1,4 +1,5 @@
 # Cloudflare 域名+IP 直连规则（整合你的文件内容，Stash 原生语法）
+name: 我的自定义
 rules:
   - DOMAIN-SUFFIX,argotunnel.com,DIRECT
   - DOMAIN-SUFFIX,cf-ipfs.com,DIRECT
