@@ -71,6 +71,7 @@ rules:
 
 # 你的自定义规则（保留原有代理组指向，无缝衔接）
   - DOMAIN-SUFFIX,exitgames.com,Lucky Defense
+  - DOMAIN-SUFFIX,photonengine.com,Lucky Defense
   - DOMAIN,configure-tcp-ios.mtgglobals.com,🔰 节点选择
   - DOMAIN-SUFFIX,8am.cc.cd,DIRECT
 
