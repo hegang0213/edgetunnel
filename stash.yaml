@@ -74,7 +74,7 @@ rules:
   - DOMAIN-SUFFIX,exitgames.com,DIRECT
   - DOMAIN-SUFFIX,photonengine.com,DIRECT
   - DOMAIN-SUFFIX,111percent.net,DIRECT
-  - IPCIDR,45.67.211.0/24,DIRECT
+  - IP-CIDR,45.67.211.0/24,DIRECT
   - DOMAIN,configure-tcp-ios.mtgglobals.com,🔰 节点选择
   - DOMAIN-SUFFIX,8am.cc.cd,DIRECT
 
